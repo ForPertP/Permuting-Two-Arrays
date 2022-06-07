@@ -1,4 +1,3 @@
-
 using namespace std;
 
 string ltrim(const string &);
@@ -15,7 +14,9 @@ vector<string> split(const string &);
  *  3. INTEGER_ARRAY B
  */
 
-string twoArrays(int k, vector<int> A, vector<int> B) {
-
+string twoArrays(int k, vector<int> A, vector<int> B)
+{
+    std::string result {"YES"};
+  
+    return result;
 }
-

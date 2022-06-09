@@ -19,7 +19,19 @@ vector<string> split(const string &);
 string twoArrays(int k, vector<int> A, vector<int> B)
 {
     std::string result {"YES"};
-  
+    
+    std::sort(A.begin(), A.end());
+    std::sort(B.begin(), B.end(), greater<int>());
+    
+    for (int i = 0; i < A.size(); ++i)
+    {
+        if (A[i]+ B[i] < k)
+        {
+            result = "NO";
+            break;
+        }
+    }
+    
     return result;
 }
 

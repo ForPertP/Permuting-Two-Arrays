@@ -25,7 +25,7 @@ string twoArrays(int k, vector<int> A, vector<int> B)
     
     for (int i = 0; i < A.size(); ++i)
     {
-        if (A[i]+ B[i] < k)
+        if (A[i] + B[i] < k)
         {
             result = "NO";
             break;

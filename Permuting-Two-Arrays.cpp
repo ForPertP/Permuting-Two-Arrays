@@ -16,6 +16,34 @@ vector<string> split(const string &);
  *  3. INTEGER_ARRAY B
  */
 
+#include <vector>
+#include <algorithm>
+#include <string>
+
+string twoArrays(int k, vector<int> A, vector<int> B)
+{
+    // Sort A in ascending order
+    std::sort(A.begin(), A.end());
+
+    // Sort B in descending order
+    std::sort(B.begin(), B.end(), std::greater<int>());
+
+    // Pair the smallest element in A
+    // with the largest element in B.
+    // If any pair sum is less than k,
+    // a valid permutation is impossible.
+    for (size_t i = 0; i < A.size(); ++i)
+    {
+        if (A[i] + B[i] < k)
+        {
+            return "NO";
+        }
+    }
+
+    // All pairs satisfy the condition
+    return "YES";
+}
+
 string twoArrays(int k, vector<int> A, vector<int> B)
 {
     std::string result {"YES"};

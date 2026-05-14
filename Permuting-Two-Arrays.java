@@ -10,6 +10,36 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
+class Result {
+
+    /*
+     * Complete the 'twoArrays' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY A
+     *  3. INTEGER_ARRAY B
+     */
+
+    public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
+        // Sort A in ascending order
+        Collections.sort(A);
+
+        // Sort B in descending order
+        B.sort(Collections.reverseOrder());
+
+        // Check if every pair sum is at least k
+        for (int i = 0; i < A.size(); i++) {
+
+            if (A.get(i) + B.get(i) < k) {
+                return "NO";
+            }
+        }
+
+        return "YES";
+    }
+}
 
 
 public class Solution {

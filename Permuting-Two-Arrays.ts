@@ -51,3 +51,27 @@ function twoArrays(k: number, A: number[], B: number[]): string {
     return "YES";    
 }
 
+
+function main() {
+    const ws: WriteStream = createWriteStream(process.env['OUTPUT_PATH']);
+
+    const q: number = parseInt(readLine().trim(), 10);
+
+    for (let qItr: number = 0; qItr < q; qItr++) {
+        const firstMultipleInput: string[] = readLine().replace(/\s+$/g, '').split(' ');
+
+        const n: number = parseInt(firstMultipleInput[0], 10);
+
+        const k: number = parseInt(firstMultipleInput[1], 10);
+
+        const A: number[] = readLine().replace(/\s+$/g, '').split(' ').map(ATemp => parseInt(ATemp, 10));
+
+        const B: number[] = readLine().replace(/\s+$/g, '').split(' ').map(BTemp => parseInt(BTemp, 10));
+
+        const result: string = twoArrays(k, A, B);
+
+        ws.write(result + '\n');
+    }
+
+    ws.end();
+}

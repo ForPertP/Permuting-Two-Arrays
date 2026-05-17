@@ -15,3 +15,19 @@ import sys
 #  2. INTEGER_ARRAY A
 #  3. INTEGER_ARRAY B
 #
+
+def twoArrays(k, A, B):
+    # Sort A in ascending order
+    A.sort()
+
+    # Sort B in descending order
+    B.sort(reverse=True)
+
+    # Check if every pair sum is at least k
+    for i in range(len(A)):
+        if A[i] + B[i] < k:
+            return "NO"
+
+    return "YES"    
+
+    
